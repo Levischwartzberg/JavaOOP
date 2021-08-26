@@ -5,6 +5,7 @@ import com.astontech.bo.interfaces.ContactInfo;
 import common.helpers.CharManipulate;
 import common.helpers.MathHelper;
 import common.helpers.StringHelper;
+import org.apache.log4j.Logger;
 
 
 import java.text.SimpleDateFormat;
@@ -14,7 +15,9 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.HashSet;
 
+
 public class Main {
+    final static Logger logger = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
 	// write your code here
@@ -25,6 +28,7 @@ public class Main {
         InterfacesTest();
         ReverseStringTest();
         ComparableTest();
+        LoggerTest();
     }
 
     private static void Welcome() {
@@ -176,5 +180,9 @@ public class Main {
         person2.setFirstName("Bubba");
         person2.setLastName("Johnson");
         System.out.println(person1.compareTo(person2));
+    }
+
+    private static void LoggerTest() {
+        logger.debug("This is a DEBUG message :)");
     }
 }
