@@ -2,7 +2,7 @@ package com.astontech.bo;
 
 import java.util.Date;
 
-public class Person extends BaseBO{
+public class Person extends BaseBO implements Comparable{
 
     //region Attributes
     private int PersonId;
@@ -76,5 +76,82 @@ public class Person extends BaseBO{
     public void PrintPersonInfo() {
         System.out.println(FirstName + " " + LastName + " is a person in the database with a birthdate of " + BirthDate + " and a gender identity of " + Gender + ".");
     }
+    //endregion
+
+    //region InterfaceMethods
+    public int compareTo(Object personB) {
+        Person personA = (Person) personB;
+//        System.out.println(getLastName());
+        if (compareLastNames(personA, 0) != 0) {
+            return compareLastNames(personA, 0);
+        }
+        else {
+            return compareFirstNames(personA, 0);
+        }
+    }
+
+    public int compareLastNames(Person personB, int index) {
+        Person personA = (Person) personB;
+        Person personAprime = new Person();
+        personAprime.setLastName(getLastName());
+//        System.out.println(getLastName());
+//        System.out.println(personB.getLastName());
+        if ((getLastName().length() < index + 1) && (personB.getLastName().length() < index + 1)) {
+            return 0;
+        }
+        else if (getLastName().length() < index + 1) {
+            return -1;
+        }
+        else if (personB.getLastName().length() < index + 1) {
+            return 1;
+        }
+        else {
+            if(getLastName().charAt(index) > personB.getLastName().charAt(index)) {
+//                System.out.println("A bigger");
+                return 1;
+            }
+            else if (getLastName().charAt(index) < personB.getLastName().charAt(index)) {
+//                System.out.println("B Bigger");
+                return -1;
+            }
+            else {
+//                System.out.println("Equal!");
+                return personAprime.compareLastNames(personB, index+1);
+            }
+        }
+    }
+
+    public int compareFirstNames(Person personB, int index) {
+        Person personA = (Person) personB;
+        Person personAprime = new Person();
+        personAprime.setFirstName(getFirstName());
+//        System.out.println(getFirstName());
+//        System.out.println(personB.getFirstName());
+        if ((getFirstName().length() < index + 1) && (personB.getFirstName().length() < index + 1)) {
+            return 0;
+        }
+        else if (getFirstName().length() < index + 1) {
+            return -1;
+        }
+        else if (personB.getFirstName().length() < index + 1) {
+            return 1;
+        }
+        else {
+            if(getFirstName().charAt(index) > personB.getFirstName().charAt(index)) {
+//                System.out.println("A bigger");
+                return 1;
+            }
+            else if (getFirstName().charAt(index) < personB.getFirstName().charAt(index)) {
+//                System.out.println("B Bigger");
+                return -1;
+            }
+            else {
+//                System.out.println("Equal!");
+                return personAprime.compareFirstNames(personB, index+1);
+            }
+        }
+    }
+
+
     //endregion
 }

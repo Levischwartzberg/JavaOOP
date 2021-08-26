@@ -24,6 +24,7 @@ public class Main {
 //        LessonHelpers();
         InterfacesTest();
         ReverseStringTest();
+        ComparableTest();
     }
 
     private static void Welcome() {
@@ -165,5 +166,15 @@ public class Main {
     private static void ReverseStringTest() {
         String myString = "Madam I'm Not Adam.";
         System.out.println(CharManipulate.ReverseString(myString));
+    }
+
+    private static void ComparableTest() {
+        Person person1 = new Person();
+        person1.setFirstName("Burt");
+        person1.setLastName("Johnson");
+        Person person2 = new Person();
+        person2.setFirstName("Bubba");
+        person2.setLastName("Johnson");
+        System.out.println(person1.compareTo(person2));
     }
 }
