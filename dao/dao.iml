@@ -7,8 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="apache-log4j-2.14" level="project" />
-    <orderEntry type="library" name="mysql.connector.java" level="project" />
+    <orderEntry type="module" module-name="bo" />
     <orderEntry type="library" name="log4j" level="project" />
+    <orderEntry type="library" name="mysql.connector.java" level="project" />
   </component>
 </module>

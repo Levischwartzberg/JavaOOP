@@ -9,6 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="common" />
     <orderEntry type="library" name="apache-log4j-2.14" level="project" />
+    <orderEntry type="library" name="mysql.connector.java" level="project" />
     <orderEntry type="library" name="log4j" level="project" />
   </component>
 </module>

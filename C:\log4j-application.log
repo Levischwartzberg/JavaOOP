@@ -1,1 +1,263 @@
 2021-08-26 14:01:28 DEBUG Main:186 - This is a DEBUG message :)
+2021-08-30 10:01:17 DEBUG Main:187 - This is a DEBUG message :)
+2021-08-30 10:01:17 ERROR Main:194 - MySQL Driver not found!
+2021-08-30 10:05:47 DEBUG Main:187 - This is a DEBUG message :)
+2021-08-30 10:08:36 DEBUG Main:187 - This is a DEBUG message :)
+2021-08-30 10:08:36 INFO  Main:197 - MySQL Driver registered! :)
+2021-08-30 10:08:52 DEBUG Main:187 - This is a DEBUG message :)
+2021-08-30 10:08:52 INFO  Main:197 - MySQL Driver Registered! :)
+2021-08-30 10:14:37 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 10:14:37 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 10:14:38 ERROR Main:207 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 260 milliseconds ago.  The last packet sent successfully to the server was 253 milliseconds ago.
+2021-08-30 10:41:59 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 10:41:59 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 10:42:00 ERROR Main:207 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 228 milliseconds ago.  The last packet sent successfully to the server was 221 milliseconds ago.
+2021-08-30 10:43:18 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 10:43:18 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 10:43:18 ERROR Main:207 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 239 milliseconds ago.  The last packet sent successfully to the server was 232 milliseconds ago.
+2021-08-30 10:43:29 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 10:43:29 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 10:43:30 ERROR Main:207 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 193 milliseconds ago.  The last packet sent successfully to the server was 185 milliseconds ago.
+2021-08-30 10:43:55 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 10:43:55 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 10:43:56 ERROR Main:207 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 280 milliseconds ago.  The last packet sent successfully to the server was 273 milliseconds ago.
+2021-08-30 10:57:05 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 10:57:05 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 10:57:06 ERROR Main:211 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server.
+2021-08-30 11:01:01 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 11:01:01 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 11:01:01 ERROR Main:211 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server.
+2021-08-30 11:02:08 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 11:02:08 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 11:02:09 INFO  Main:215 - Succesfully connected to mySQL database! :)
+2021-08-30 11:54:02 DEBUG Main:190 - This is a DEBUG message :)
+2021-08-30 11:54:02 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 11:54:03 INFO  Main:215 - Succesfully connected to mySQL database! :)
+2021-08-30 12:02:00 INFO  Main:199 - MySQL Driver Registered! :)
+2021-08-30 12:02:01 INFO  Main:214 - Succesfully connected to mySQL database! :)
+2021-08-30 12:02:01 INFO  Main:232 - First Name: Bobbert    Last Name: Franklin
+2021-08-30 12:02:01 INFO  Main:232 - First Name: Bob    Last Name: Johnson
+2021-08-30 12:02:01 INFO  Main:232 - First Name: Belinda    Last Name: Blumenthal
+2021-08-30 12:09:09 INFO  Main:199 - MySQL Driver Registered! :)
+2021-08-30 12:09:10 INFO  Main:214 - Succesfully connected to mySQL database! :)
+2021-08-30 12:09:10 INFO  Main:235 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-30 12:09:10 INFO  Main:235 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-30 12:09:10 INFO  Main:235 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-30 12:17:13 INFO  Main:199 - MySQL Driver Registered! :)
+2021-08-30 12:17:14 ERROR Main:210 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server.
+2021-08-30 12:19:20 INFO  Main:199 - MySQL Driver Registered! :)
+2021-08-30 12:19:21 ERROR Main:210 - Connection failed! com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server.
+2021-08-30 12:23:13 INFO  Main:199 - MySQL Driver Registered! :)
+2021-08-30 12:23:14 INFO  Main:214 - Succesfully connected to mySQL database! :)
+2021-08-30 12:23:14 INFO  Main:235 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-30 12:23:14 INFO  Main:235 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-30 12:23:14 INFO  Main:235 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-30 12:30:32 INFO  Main:199 - MySQL Driver Registered! :)
+2021-08-30 12:30:32 INFO  Main:216 - Succesfully connected to mySQL database! :)
+2021-08-30 12:30:33 INFO  Main:237 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-30 12:30:33 INFO  Main:237 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-30 12:30:33 INFO  Main:237 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-30 12:53:00 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:53:01 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:53:01 INFO  Main:238 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-30 12:53:01 INFO  Main:238 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-30 12:53:01 INFO  Main:238 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-30 12:53:01 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:53:01 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:53:01 INFO  Main:256 - 0: 9: Bobbert
+2021-08-30 12:53:01 ERROR Main:259 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-30 12:54:32 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:54:33 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:54:33 INFO  Main:238 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-30 12:54:33 INFO  Main:238 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-30 12:54:33 INFO  Main:238 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-30 12:54:33 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:54:33 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:54:33 INFO  Main:256 - 0: Bobbert: Reginald
+2021-08-30 12:54:33 ERROR Main:259 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-30 12:55:54 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:55:55 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:55:55 INFO  Main:238 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-30 12:55:55 INFO  Main:238 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-30 12:55:55 INFO  Main:238 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-30 12:55:55 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:55:55 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:55:55 INFO  Main:256 - 9: Bobbert: Reginald
+2021-08-30 12:55:55 INFO  Main:256 - 10: Bob: Bobbert
+2021-08-30 12:55:55 INFO  Main:256 - 11: Belinda: null
+2021-08-30 12:56:27 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:56:27 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:56:28 INFO  Main:238 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-30 12:56:28 INFO  Main:238 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-30 12:56:28 INFO  Main:238 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-30 12:56:28 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:56:28 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:56:28 INFO  Main:256 - 9: Bobbert: Franklin
+2021-08-30 12:56:28 INFO  Main:256 - 10: Bob: Johnson
+2021-08-30 12:56:28 INFO  Main:256 - 11: Belinda: Blumenthal
+2021-08-30 12:57:47 INFO  Main:200 - MySQL Driver Registered! :)
+2021-08-30 12:57:48 INFO  Main:217 - Succesfully connected to mySQL database! :)
+2021-08-30 12:57:48 INFO  Main:238 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-30 12:57:48 INFO  Main:238 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-30 12:57:48 INFO  Main:238 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 09:59:45 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 09:59:45 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 09:59:45 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 09:59:45 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 09:59:45 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 09:59:45 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 09:59:45 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 09:59:45 ERROR MySQL:70 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-31 10:00:16 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:00:16 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:01:23 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:01:24 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:01:24 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:01:24 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:01:24 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:01:24 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:01:24 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:01:24 ERROR MySQL:70 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-31 10:05:03 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:05:03 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:05:03 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:05:03 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:05:03 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:05:03 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:05:03 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:05:34 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:05:34 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:05:34 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:05:34 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:05:34 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:05:34 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:05:34 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:05:34 ERROR MySQL:70 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-31 10:06:10 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:06:10 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:06:10 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:06:10 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:06:10 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:06:10 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:06:10 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:06:10 ERROR MySQL:70 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-31 10:07:16 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:07:16 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:07:16 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:07:16 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:07:16 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:07:16 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:07:16 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:07:16 ERROR MySQL:70 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-31 10:10:18 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:10:19 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:10:19 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:10:19 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:10:19 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:10:19 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:10:19 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:10:19 ERROR MySQL:70 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-31 10:11:56 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:11:57 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:11:57 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:11:57 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:11:57 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:11:57 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:11:57 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:11:57 ERROR MySQL:70 - java.sql.SQLDataException: Cannot determine value type from string 'Mr.'
+2021-08-31 10:12:45 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:12:46 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:12:46 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:12:46 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:12:46 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:12:46 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:12:46 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:15:45 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:15:45 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:15:45 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:15:45 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:15:45 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:15:45 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:15:45 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:18:10 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:18:11 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:18:11 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:18:11 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:18:11 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:18:11 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:18:11 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:18:34 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:18:34 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:18:34 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:18:34 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:18:34 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:18:34 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:18:34 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:18:59 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:18:59 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:18:59 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:18:59 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:18:59 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:18:59 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:18:59 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:19:46 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:19:46 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:19:46 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:19:46 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:19:46 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:19:46 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:19:46 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:20:48 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:20:49 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:20:49 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:20:49 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:20:49 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:20:49 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:20:49 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:21:22 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:21:22 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:21:22 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:21:22 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:21:22 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:21:22 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:21:22 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:22:42 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:22:43 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:22:43 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:22:43 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:22:43 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:22:43 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:22:43 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:24:22 INFO  Main:201 - MySQL Driver Registered! :)
+2021-08-31 10:24:23 INFO  Main:218 - Succesfully connected to mySQL database! :)
+2021-08-31 10:24:23 INFO  Main:239 - ID: 9   First Name: Bobbert   Last Name: Franklin
+2021-08-31 10:24:23 INFO  Main:239 - ID: 10   First Name: Bob   Last Name: Johnson
+2021-08-31 10:24:23 INFO  Main:239 - ID: 11   First Name: Belinda   Last Name: Blumenthal
+2021-08-31 10:24:23 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:24:23 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:24:48 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:24:49 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:28:08 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:28:08 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:30:32 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:30:33 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:30:43 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:30:44 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:31:49 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:31:49 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:36:11 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:36:11 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:36:31 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:36:31 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 10:36:39 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 10:36:39 INFO  MySQL:36 - Succesfully connected to mySQL database! :)

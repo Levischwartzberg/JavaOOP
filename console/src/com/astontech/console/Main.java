@@ -2,18 +2,19 @@ package com.astontech.console;
 
 import com.astontech.bo.*;
 import com.astontech.bo.interfaces.ContactInfo;
+import com.astontech.dao.PersonDAO;
+import com.astontech.dao.mysql.PersonDAOImplementation;
 import common.helpers.CharManipulate;
 import common.helpers.MathHelper;
 import common.helpers.StringHelper;
 import org.apache.log4j.Logger;
 
 
+import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.*;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.HashSet;
 
 
 public class Main {
@@ -21,14 +22,18 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        LessonObjectsLAB();
-        LessonCollectionsLAB();
+//        LessonObjectsLAB();
+//        LessonCollectionsLAB();
 //        LessonStaticRefHash();
 //        LessonHelpers();
-        InterfacesTest();
-        ReverseStringTest();
-        ComparableTest();
-        LoggerTest();
+//        InterfacesTest();
+//        ReverseStringTest();
+//        ComparableTest();
+//        LoggerTest();
+//        LessonDBConnection();
+//        LessonExecQuery();
+//        LessonGetStoredProc();
+        LessonDAO();
     }
 
     private static void Welcome() {
@@ -184,5 +189,105 @@ public class Main {
 
     private static void LoggerTest() {
         logger.debug("This is a DEBUG message :)");
+    }
+
+    private static Connection LessonDBConnection() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            logger.error("MySQL Driver not found!");
+            return null;
+        }
+        logger.info("MySQL Driver Registered! :)");
+
+        Connection connection = null;
+
+        try {
+            String dbHost = "localhost";
+            String dbName = "astonengineer";
+            String dbUser = "consoleUser";
+            String dbPass = "MySQLpasscode123!";
+            String useSSL = "false";
+            String procBod = "true";
+            connection = DriverManager.getConnection("jdbc:mysql://" + dbHost + ":3306/" + dbName + "?useSSL=" + useSSL + "&noAccessToProcedureBodies=" + procBod, dbUser, dbPass);
+        } catch (SQLException ex) {
+            logger.error("Connection failed! " + ex);
+            return null;
+        }
+        if (connection != null) {
+            logger.info("Succesfully connected to mySQL database! :)");
+            return connection;
+        }
+        else {
+            logger.info("Connection Failed!");
+            return null;
+        }
+
+    }
+
+    private static void LessonExecQuery() {
+        Connection conn = LessonDBConnection();
+        try {
+            Statement statment = conn.createStatement();
+            String query = "select PersonId, FirstName, LastName from person;";
+
+            ResultSet rs = statment.executeQuery(query);
+            while(rs.next()) {
+                int personId = rs.getInt(1);
+                String firstName = rs.getString(2);
+                String lastName = rs.getString(3);
+                logger.info("ID: " + personId + "   First Name: " + firstName + "   Last Name: " + lastName);
+            }
+        } catch (SQLException sqlEx) {
+            logger.error(sqlEx);
+        }
+    }
+
+    private static void LessonGetStoredProc() {
+        Connection conn = LessonDBConnection();
+        try {
+            String getPerson = "{call GetPerson(?,?)}";
+            CallableStatement cStmt = conn.prepareCall(getPerson);
+
+            cStmt.setInt(1,20);
+            cStmt.setInt(2,1);
+            ResultSet rs = cStmt.executeQuery();
+
+            while(rs.next()) {
+                logger.info(rs.getInt(1) + ": "+ rs.getString(3) + ": " + rs.getString(5));
+            }
+        } catch (SQLException sqlEx) {
+            logger.error(sqlEx);
+        }
+    }
+
+    private static void LessonDAO() {
+        //region Create Menu
+        PersonDAO personDAO = new PersonDAOImplementation();
+        List<Person> personList = personDAO.getPersonList();
+        System.out.println("-----------------------------");
+
+        for(Person person : personList) {
+            System.out.println(person.getPersonId() + ") " + person.getFirstName() + " " + person.getLastName());
+        }
+
+        System.out.println("-----------------------------");
+        //endregion
+
+
+        //region Prompt User
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select a person from the list by entering their ID.");
+        String personId = scanner.nextLine();
+        //endregion
+
+
+        //region Get Person Details
+        Person personDetail = personDAO.getPersonById(Integer.parseInt(personId));
+        System.out.println("--------- Person Details ---------");
+        System.out.println("Full Name: " + personDetail.getFirstName() + " " + personDetail.getLastName());
+        System.out.println("DOB: " + personDetail.getBirthDate());
+        System.out.println("SSN: " + personDetail.getSocialSecurityNumber());
+        //endregion
     }
 }
