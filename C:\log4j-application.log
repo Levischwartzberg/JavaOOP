@@ -261,3 +261,60 @@ The last packet successfully received from the server was 280 milliseconds ago. 
 2021-08-31 10:36:31 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
 2021-08-31 10:36:39 INFO  MySQL:27 - MySQL Driver Registered! :)
 2021-08-31 10:36:39 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 15:36:21 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 15:36:22 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 15:36:27 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 15:36:27 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 15:36:37 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 15:36:38 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 15:36:41 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 15:36:41 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 15:37:23 ERROR MySQL:27 - SQL Server Driver not found java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2021-08-31 15:37:23 INFO  MySQL:29 - SQL Server driver registered
+2021-08-31 15:37:24 ERROR MySQL:34 - Connection failedjava.sql.SQLException: No suitable driver found for jdbc:sqlserver://localhost:1433
+2021-08-31 15:37:24 INFO  MySQL:40 - Connection Failed!
+2021-08-31 15:42:34 ERROR MySQL:27 - SQL Server Driver not found java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2021-08-31 15:42:34 INFO  MySQL:29 - SQL Server driver registered
+2021-08-31 15:42:34 ERROR MySQL:34 - Connection failedjava.sql.SQLException: No suitable driver found for jdbc:sqlserver://localhost:1433
+2021-08-31 15:42:34 INFO  MySQL:40 - Connection Failed!
+2021-08-31 15:52:52 ERROR MySQL:27 - SQL Server Driver not found java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2021-08-31 15:52:52 INFO  MySQL:29 - SQL Server driver registered
+2021-08-31 15:52:52 ERROR MySQL:34 - Connection failedjava.sql.SQLException: No suitable driver found for jdbc:sqlserver://localhost:1433
+2021-08-31 15:52:52 INFO  MySQL:40 - Connection Failed!
+2021-08-31 15:57:54 ERROR MySQL:27 - SQL Server Driver not found java.lang.ClassNotFoundException: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2021-08-31 15:57:54 INFO  MySQL:29 - SQL Server driver registered
+2021-08-31 15:57:54 ERROR MySQL:34 - Connection failedjava.sql.SQLException: No suitable driver found for jdbc:sqlserver://localhost:1433
+2021-08-31 15:57:54 INFO  MySQL:40 - Connection Failed!
+2021-08-31 16:01:20 INFO  MySQL:29 - SQL Server driver registered
+2021-08-31 16:01:21 ERROR MySQL:34 - Connection failedcom.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user 'SA'. ClientConnectionId:963a3857-3336-4fef-9d1f-1dcb5f5e2bb6
+2021-08-31 16:01:21 INFO  MySQL:40 - Connection Failed!
+2021-08-31 16:02:11 INFO  MySQL:29 - SQL Server driver registered
+2021-08-31 16:02:12 INFO  MySQL:37 - Succesfully connected to mySQL database! :)
+2021-08-31 16:03:29 INFO  MySQL:29 - SQL Server driver registered
+2021-08-31 16:03:30 INFO  MySQL:37 - Succesfully connected to SQL Server database! :)
+2021-08-31 16:19:48 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:19:49 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:19:56 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:19:56 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:31:13 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:31:13 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:31:20 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:31:20 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:31:43 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:31:44 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:32:06 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:32:06 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:36:38 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:36:39 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:38:14 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:38:15 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:40:07 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:40:07 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:44:10 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:44:11 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:44:17 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:44:17 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:45:12 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:45:13 INFO  MySQL:36 - Succesfully connected to mySQL database! :)
+2021-08-31 16:45:17 INFO  MySQL:27 - MySQL Driver Registered! :)
+2021-08-31 16:45:17 INFO  MySQL:36 - Succesfully connected to mySQL database! :)

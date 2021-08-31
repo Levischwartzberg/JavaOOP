@@ -14,5 +14,6 @@
     <orderEntry type="library" name="log4j" level="project" />
     <orderEntry type="library" name="mysql.connector.java" level="project" />
     <orderEntry type="library" name="log4j" level="project" />
+    <orderEntry type="library" name="mssql-jdbc-7.2.2.jre8" level="project" />
   </component>
 </module>

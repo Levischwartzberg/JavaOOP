@@ -2,8 +2,11 @@ package com.astontech.console;
 
 import com.astontech.bo.*;
 import com.astontech.bo.interfaces.ContactInfo;
+import com.astontech.dao.EmployeeDAO;
 import com.astontech.dao.PersonDAO;
+import com.astontech.dao.mysql.EmployeeDAOImplementation;
 import com.astontech.dao.mysql.PersonDAOImplementation;
+import com.astontech.dao.sqlserver.TestImpl;
 import common.helpers.CharManipulate;
 import common.helpers.MathHelper;
 import common.helpers.StringHelper;
@@ -33,7 +36,9 @@ public class Main {
 //        LessonDBConnection();
 //        LessonExecQuery();
 //        LessonGetStoredProc();
-        LessonDAO();
+//        LessonDAO();
+//        SQLServerTest();
+        EmployeeDAOTest();
     }
 
     private static void Welcome() {
@@ -288,6 +293,39 @@ public class Main {
         System.out.println("Full Name: " + personDetail.getFirstName() + " " + personDetail.getLastName());
         System.out.println("DOB: " + personDetail.getBirthDate());
         System.out.println("SSN: " + personDetail.getSocialSecurityNumber());
+        //endregion
+    }
+
+    public static void SQLServerTest() {
+        TestImpl test = new TestImpl();
+        test.getTestString(1);
+    }
+
+    private static void EmployeeDAOTest() {
+        //region Create Menu
+        EmployeeDAO employeeDAO = new EmployeeDAOImplementation();
+        List<Employee> employeeList = employeeDAO.getEmployeeList();
+        System.out.println("-----------------------------");
+
+        for(Employee employee : employeeList) {
+            System.out.println(employee.getEmployeeId() + "  " + employee.getPersonId());
+        }
+
+        System.out.println("-----------------------------");
+        //endregion
+
+
+        //region Prompt User
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select an employee from the list by entering their ID.");
+        String personId = scanner.nextLine();
+        //endregion
+
+
+        //region Get Person Details
+        Employee employeeDetail = employeeDAO.getEmployeeById(Integer.parseInt(personId));
+        System.out.println("--------- Person Details ---------");
+        System.out.println("Employee Id, Person Id: " + employeeDetail.getEmployeeId() + " " + employeeDetail.getPersonId());
         //endregion
     }
 }
