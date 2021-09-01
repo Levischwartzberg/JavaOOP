@@ -2,12 +2,8 @@ package com.astontech.console;
 
 import com.astontech.bo.*;
 import com.astontech.bo.interfaces.ContactInfo;
-import com.astontech.dao.EmployeeDAO;
-import com.astontech.dao.PersonDAO;
-import com.astontech.dao.VehicleDAO;
-import com.astontech.dao.mysql.EmployeeDAOImplementation;
-import com.astontech.dao.mysql.PersonDAOImplementation;
-import com.astontech.dao.mysql.VehicleDAOImplementation;
+import com.astontech.dao.*;
+import com.astontech.dao.mysql.*;
 import com.astontech.dao.sqlserver.TestImpl;
 import common.helpers.CharManipulate;
 import common.helpers.MathHelper;
@@ -40,8 +36,10 @@ public class Main {
 //        LessonGetStoredProc();
 //        LessonDAO();
 //        SQLServerTest();
-//        EmployeeDAOTest();
-        VehicleDAOTest();
+        EmployeeDAOTest();
+//        VehicleDAOTest();
+//        VehicleModelDAOTest();
+//        VehicleMakeDAOTest();
     }
 
     private static void Welcome() {
@@ -353,7 +351,7 @@ public class Main {
         //endregion
 
 
-        //region Get Person Details
+        //region Get Vehicle Details
         Vehicle vehicleDetail = vehicleDAO.getVehicleById(Integer.parseInt(vehicleId));
         System.out.println("--------- Vehicle Details ---------");
         System.out.println("Vehicle Id: " + vehicleDetail.getVehicleId());
@@ -361,6 +359,65 @@ public class Main {
         System.out.println("Vehicle Color: " + vehicleDetail.getColor());
         System.out.println("Vehicle Year: " + vehicleDetail.getYear());
         System.out.println("Vehicle License Plate: " + vehicleDetail.getLicensePlate());
+        //endregion
+    }
+
+    private static void VehicleModelDAOTest() {
+        //region Create Menu
+        VehicleModelDAO vehicleModelDAO = new VehicleModelDAOImplementation();
+        List<VehicleModel> vehicleModelList = vehicleModelDAO.getVehicleModelList();
+        System.out.println("-----------------------------");
+
+        for(VehicleModel vehicleModel : vehicleModelList) {
+            System.out.println(vehicleModel.getVehicleModelId() + "  " + vehicleModel.getVehicleModelName() + " " + vehicleModel.getVehicleMake().getVehicleMakeName());
+        }
+
+        System.out.println("-----------------------------");
+        //endregion
+
+
+        //region Prompt User
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select a vehicle model from the list by entering its ID.");
+        String vehicleModelId = scanner.nextLine();
+        //endregion
+
+
+        //region Get Vehicle Details
+        VehicleModel vehicleModelDetail = vehicleModelDAO.getVehicleModelById(Integer.parseInt(vehicleModelId));
+        System.out.println("--------- Vehicle Model Details ---------");
+        System.out.println("Vehicle Model Id: " + vehicleModelDetail.getVehicleModelId());
+        System.out.println("Vehicle Model Name: " + vehicleModelDetail.getVehicleModelName());
+        System.out.println("Vehicle Make Name: " + vehicleModelDetail.getVehicleMake().getVehicleMakeName());
+        //endregion
+    }
+
+    private static void VehicleMakeDAOTest() {
+        //region Create Menu
+        VehicleMakeDAO vehicleMakeDAO = new VehicleMakeDAOImplementation();
+        List<VehicleMake> vehicleMakeList = vehicleMakeDAO.getVehicleMakeList();
+        System.out.println("-----------------------------");
+
+        for(VehicleMake vehicleMake : vehicleMakeList) {
+            System.out.println(vehicleMake.getVehicleMakeId() + "  " + vehicleMake.getVehicleMakeName());
+        }
+
+        System.out.println("-----------------------------");
+        //endregion
+
+
+        //region Prompt User
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select a vehicle make from the list by entering its ID.");
+        String vehicleMakeId = scanner.nextLine();
+        //endregion
+
+
+        //region Get Vehicle Details
+        VehicleMake vehicleMakeDetail = vehicleMakeDAO.getVehicleMakeById(Integer.parseInt(vehicleMakeId));
+        System.out.println("--------- Vehicle Make Details ---------");
+        System.out.println("Vehicle Make Id: " + vehicleMakeDetail.getVehicleMakeId());
+        System.out.println("Vehicle Make Name: " + vehicleMakeDetail.getVehicleMakeName());
         //endregion
     }
 }

@@ -17,26 +17,15 @@ public class VehicleDAOImplementation extends MySQL implements VehicleDAO {
         Connect();
         Vehicle vehicle = null;
 
-        VehicleModelDAO vehicleModelDao = new VehicleModelDAOImplementation();
-
         try {
             String sp = "{call GetVehicle(?,?)}";
             CallableStatement cStmt = connection.prepareCall(sp);
-            cStmt.setInt(1,10);
+            cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, vehicleId);
             ResultSet rs = cStmt.executeQuery();
 
             if(rs.next()) {
-                vehicle = new Vehicle();
-                vehicle.setVehicleId(rs.getInt(1));
-                vehicle.setYear(rs.getInt(2));
-                vehicle.setLicensePlate(rs.getString(3));
-                vehicle.setVIN(rs.getString(4));
-                vehicle.setColor(rs.getString(5));
-                vehicle.setPurchased(rs.getBoolean(6));
-                vehicle.setPurchasePrice(rs.getInt(7));
-                vehicle.setPurchaseDate(rs.getDate(8));
-                vehicle.setVehicleModel(vehicleModelDao.getVehicleModelById(rs.getInt(9)));
+                vehicle = HydrateVehicle(rs);
             }
         } catch (SQLException sqlEx) {
             logger.error(sqlEx);
@@ -54,21 +43,12 @@ public class VehicleDAOImplementation extends MySQL implements VehicleDAO {
         try {
             String sp = "{call GetVehicle(?,?)}";
             CallableStatement cStmt = connection.prepareCall(sp);
-            cStmt.setInt(1,20);
+            cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
             ResultSet rs = cStmt.executeQuery();
 
             while(rs.next()) {
-                Vehicle vehicle = new Vehicle();
-                vehicle.setVehicleId(rs.getInt(1));
-                vehicle.setYear(rs.getInt(2));
-                vehicle.setLicensePlate(rs.getString(3));
-                vehicle.setVIN(rs.getString(4));
-                vehicle.setColor(rs.getString(5));
-                vehicle.setPurchased(rs.getBoolean(6));
-                vehicle.setPurchasePrice(rs.getInt(7));
-                vehicle.setPurchaseDate(rs.getDate(8));
-                vehicle.setVehicleModel(vehicleModelDao.getVehicleModelById(rs.getInt(9)));
+                Vehicle vehicle = HydrateVehicle(rs);
 
                 vehicleList.add(vehicle);
             }
@@ -91,5 +71,22 @@ public class VehicleDAOImplementation extends MySQL implements VehicleDAO {
     @Override
     public boolean deleteVehicle(int personId) {
         return false;
+    }
+
+    private static Vehicle HydrateVehicle(ResultSet rs) throws SQLException {
+        VehicleModelDAO vehicleModelDao = new VehicleModelDAOImplementation();
+
+        Vehicle vehicle = new Vehicle();
+        vehicle.setVehicleId(rs.getInt(1));
+        vehicle.setYear(rs.getInt(2));
+        vehicle.setLicensePlate(rs.getString(3));
+        vehicle.setVIN(rs.getString(4));
+        vehicle.setColor(rs.getString(5));
+        vehicle.setPurchased(rs.getBoolean(6));
+        vehicle.setPurchasePrice(rs.getInt(7));
+        vehicle.setPurchaseDate(rs.getDate(8));
+        vehicle.setVehicleModel(vehicleModelDao.getVehicleModelById(rs.getInt(9)));
+
+        return vehicle;
     }
 }

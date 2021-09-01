@@ -18,6 +18,12 @@ public abstract class MySQL {
 
     final static Logger logger = Logger.getLogger(MySQL.class);
 
+    protected static final int GET_BY_ID = 10;
+    protected static final int GET_COLLECTION = 20;
+    protected static final int INSERT = 10;
+    protected static final int UPDATE = 20;
+    protected static final int DELETE = 30;
+
     protected static void Connect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

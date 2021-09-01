@@ -17,19 +17,12 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
         try {
             String sp = "{call GetEmployee(?,?)}";
             CallableStatement cStmt = connection.prepareCall(sp);
-            cStmt.setInt(1,10);
+            cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, employeeId);
             ResultSet rs = cStmt.executeQuery();
 
             if(rs.next()) {
-                employee = new Employee();
-                System.out.println(rs.getInt(1));
-                employee.setEmployeeId(rs.getInt(1));
-                employee.setHireDate(rs.getDate(2));
-                employee.setTermDate(rs.getDate(3));
-                employee.setBirthDate(rs.getDate(4));
-                employee.setPersonId(rs.getInt(5));
-                employee.setCreateDate(rs.getDate(6));
+                employee = HydrateEmployee(rs);
             }
         } catch (SQLException sqlEx) {
             logger.error(sqlEx);
@@ -44,19 +37,12 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
         try {
             String sp = "{call GetEmployee(?,?)}";
             CallableStatement cStmt = connection.prepareCall(sp);
-            cStmt.setInt(1,20);
+            cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
             ResultSet rs = cStmt.executeQuery();
 
             while(rs.next()) {
-                Employee employee = new Employee();
-                System.out.println(rs.getInt(1));
-                employee.setEmployeeId(rs.getInt(1));
-                employee.setHireDate(rs.getDate(2));
-                employee.setTermDate(rs.getDate(3));
-                employee.setBirthDate(rs.getDate(4));
-                employee.setPersonId(rs.getInt(5));
-                employee.setCreateDate(rs.getDate(6));
+                Employee employee = HydrateEmployee(rs);
 
                 employeeList.add(employee);
             }
@@ -79,5 +65,17 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
     @Override
     public boolean deleteEmployee(int employeeId) {
         return false;
+    }
+
+    private static Employee HydrateEmployee(ResultSet rs) throws SQLException {
+        Employee employee = new Employee();
+        employee.setEmployeeId(rs.getInt(1));
+        employee.setHireDate(rs.getDate(2));
+        employee.setTermDate(rs.getDate(3));
+        employee.setBirthDate(rs.getDate(4));
+        employee.setPersonId(rs.getInt(5));
+        employee.setCreateDate(rs.getDate(6));
+
+        return employee;
     }
 }

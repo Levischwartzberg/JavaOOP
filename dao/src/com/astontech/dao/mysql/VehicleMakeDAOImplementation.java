@@ -17,15 +17,12 @@ public class VehicleMakeDAOImplementation extends MySQL implements VehicleMakeDA
         try {
             String sp = "{call GetVehicleMake(?,?)}";
             CallableStatement cStmt = connection.prepareCall(sp);
-            cStmt.setInt(1,10);
+            cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, vehicleMakeId);
             ResultSet rs = cStmt.executeQuery();
 
             if(rs.next()) {
-                vehicleMake = new VehicleMake();
-                vehicleMake.setVehicleMakeId(rs.getInt(1));
-                vehicleMake.setVehicleMakeName(rs.getString(2));
-                vehicleMake.setCreateDate(rs.getDate(3));
+                vehicleMake = HydrateVehicleMake(rs);
             }
         } catch (SQLException sqlEx) {
             logger.error(sqlEx);
@@ -40,15 +37,12 @@ public class VehicleMakeDAOImplementation extends MySQL implements VehicleMakeDA
         try {
             String sp = "{call GetVehicleMake(?,?)}";
             CallableStatement cStmt = connection.prepareCall(sp);
-            cStmt.setInt(1,20);
+            cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
             ResultSet rs = cStmt.executeQuery();
 
             while(rs.next()) {
-                VehicleMake vehicleMake = new VehicleMake();
-                vehicleMake.setVehicleMakeId(rs.getInt(1));
-                vehicleMake.setVehicleMakeName(rs.getString(2));
-                vehicleMake.setCreateDate(rs.getDate(3));
+                VehicleMake vehicleMake = HydrateVehicleMake(rs);
 
                 vehicleMakeList.add(vehicleMake);
             }
@@ -71,5 +65,14 @@ public class VehicleMakeDAOImplementation extends MySQL implements VehicleMakeDA
     @Override
     public boolean deleteVehicleMake(int vehicleId) {
         return false;
+    }
+
+    private static VehicleMake HydrateVehicleMake(ResultSet rs) throws SQLException {
+        VehicleMake vehicleMake = new VehicleMake();
+        vehicleMake.setVehicleMakeId(rs.getInt(1));
+        vehicleMake.setVehicleMakeName(rs.getString(2));
+        vehicleMake.setCreateDate(rs.getDate(3));
+
+        return vehicleMake;
     }
 }

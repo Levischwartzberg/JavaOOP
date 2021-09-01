@@ -17,23 +17,12 @@ public class PersonDAOImplementation extends MySQL implements PersonDAO {
         try {
             String sp = "{call GetPerson(?,?)}";
             CallableStatement cStmt = connection.prepareCall(sp);
-            cStmt.setInt(1,10);
+            cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, personId);
             ResultSet rs = cStmt.executeQuery();
 
             if(rs.next()) {
-                person = new Person();
-                person.setPersonId(rs.getInt(1));
-                person.setTitle(rs.getString(2));
-                person.setFirstName(rs.getString(3));
-                person.setMiddleName(rs.getString(4));
-                person.setLastName(rs.getString(5));
-                person.setCreateDate(rs.getDate(6));
-                person.setDisplayFirstName(rs.getString(7));
-                person.setIsDeleted(rs.getBoolean(8));
-                person.setGender(rs.getString(9));
-                person.setBirthDate(rs.getDate(10));
-                person.setSocialSecurityNumber(rs.getString(11));
+                person = HydratePerson(rs);
             }
         } catch (SQLException sqlEx) {
             logger.error(sqlEx);
@@ -48,23 +37,12 @@ public class PersonDAOImplementation extends MySQL implements PersonDAO {
         try {
             String sp = "{call GetPerson(?,?)}";
             CallableStatement cStmt = connection.prepareCall(sp);
-            cStmt.setInt(1,20);
+            cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
             ResultSet rs = cStmt.executeQuery();
 
             while(rs.next()) {
-                Person person = new Person();
-                person.setPersonId(rs.getInt(1));
-                person.setTitle(rs.getString(2));
-                person.setFirstName(rs.getString(3));
-                person.setMiddleName(rs.getString(4));
-                person.setLastName(rs.getString(5));
-                person.setCreateDate(rs.getDate(6));
-                person.setDisplayFirstName(rs.getString(7));
-                person.setIsDeleted(rs.getBoolean(8));
-                person.setGender(rs.getString(9));
-                person.setBirthDate(rs.getDate(10));
-                person.setSocialSecurityNumber(rs.getString(11));
+                Person person = HydratePerson(rs);
 
                 personList.add(person);
             }
@@ -87,5 +65,22 @@ public class PersonDAOImplementation extends MySQL implements PersonDAO {
     @Override
     public boolean deletePerson(int personId) {
         return false;
+    }
+
+    private static Person HydratePerson(ResultSet rs) throws SQLException{
+        Person person = new Person();
+        person.setPersonId(rs.getInt(1));
+        person.setTitle(rs.getString(2));
+        person.setFirstName(rs.getString(3));
+        person.setMiddleName(rs.getString(4));
+        person.setLastName(rs.getString(5));
+        person.setCreateDate(rs.getDate(6));
+        person.setDisplayFirstName(rs.getString(7));
+        person.setIsDeleted(rs.getBoolean(8));
+        person.setGender(rs.getString(9));
+        person.setBirthDate(rs.getDate(10));
+        person.setSocialSecurityNumber(rs.getString(11));
+
+        return person;
     }
 }
