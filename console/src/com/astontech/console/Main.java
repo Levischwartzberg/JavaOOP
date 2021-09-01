@@ -4,8 +4,10 @@ import com.astontech.bo.*;
 import com.astontech.bo.interfaces.ContactInfo;
 import com.astontech.dao.EmployeeDAO;
 import com.astontech.dao.PersonDAO;
+import com.astontech.dao.VehicleDAO;
 import com.astontech.dao.mysql.EmployeeDAOImplementation;
 import com.astontech.dao.mysql.PersonDAOImplementation;
+import com.astontech.dao.mysql.VehicleDAOImplementation;
 import com.astontech.dao.sqlserver.TestImpl;
 import common.helpers.CharManipulate;
 import common.helpers.MathHelper;
@@ -38,7 +40,8 @@ public class Main {
 //        LessonGetStoredProc();
 //        LessonDAO();
 //        SQLServerTest();
-        EmployeeDAOTest();
+//        EmployeeDAOTest();
+        VehicleDAOTest();
     }
 
     private static void Welcome() {
@@ -326,6 +329,38 @@ public class Main {
         Employee employeeDetail = employeeDAO.getEmployeeById(Integer.parseInt(personId));
         System.out.println("--------- Person Details ---------");
         System.out.println("Employee Id, Person Id: " + employeeDetail.getEmployeeId() + " " + employeeDetail.getPersonId());
+        //endregion
+    }
+
+    private static void VehicleDAOTest() {
+        //region Create Menu
+        VehicleDAO vehicleDAO = new VehicleDAOImplementation();
+        List<Vehicle> vehicleList = vehicleDAO.getVehicleList();
+        System.out.println("-----------------------------");
+
+        for(Vehicle vehicle : vehicleList) {
+            System.out.println(vehicle.getVehicleId() + "  " + vehicle.getLicensePlate() + " " + vehicle.getVehicleModel().getVehicleModelName());
+        }
+
+        System.out.println("-----------------------------");
+        //endregion
+
+
+        //region Prompt User
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select a vehicle from the list by entering its ID.");
+        String vehicleId = scanner.nextLine();
+        //endregion
+
+
+        //region Get Person Details
+        Vehicle vehicleDetail = vehicleDAO.getVehicleById(Integer.parseInt(vehicleId));
+        System.out.println("--------- Vehicle Details ---------");
+        System.out.println("Vehicle Id: " + vehicleDetail.getVehicleId());
+        System.out.println("Vehicle Model: " + vehicleDetail.getVehicleModel().getVehicleModelName());
+        System.out.println("Vehicle Color: " + vehicleDetail.getColor());
+        System.out.println("Vehicle Year: " + vehicleDetail.getYear());
+        System.out.println("Vehicle License Plate: " + vehicleDetail.getLicensePlate());
         //endregion
     }
 }

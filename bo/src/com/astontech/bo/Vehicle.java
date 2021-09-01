@@ -10,20 +10,20 @@ public class Vehicle extends BaseBO{
     private String LicensePlate;
     private String VIN;
     private String Color;
-    private Boolean IsDeleted;
+    private Boolean IsPurchased;
     private int PurchasePrice;
     private Date PurchaseDate;
     private VehicleModel Model;
     //endregion
 
     //region Constructors
-    public Vehicle(int vehicleId, int year, String licensePlate, String VIN, String color, Boolean isDeleted, int purchasePrice, Date purchaseDate) {
+    public Vehicle(int vehicleId, int year, String licensePlate, String VIN, String color, Boolean isPurchased, int purchasePrice, Date purchaseDate) {
         VehicleId = vehicleId;
         Year = year;
         LicensePlate = licensePlate;
         this.VIN = VIN;
         Color = color;
-        IsDeleted = isDeleted;
+        IsPurchased = isPurchased;
         PurchasePrice = purchasePrice;
         PurchaseDate = purchaseDate;
         Model = new VehicleModel();
@@ -72,12 +72,12 @@ public class Vehicle extends BaseBO{
         Color = color;
     }
 
-    public Boolean getDeleted() {
-        return IsDeleted;
+    public Boolean getPurchased() {
+        return IsPurchased;
     }
 
-    public void setDeleted(Boolean deleted) {
-        IsDeleted = deleted;
+    public void setPurchased(Boolean deleted) {
+        IsPurchased = deleted;
     }
 
     public int getPurchasePrice() {

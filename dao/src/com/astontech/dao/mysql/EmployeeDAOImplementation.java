@@ -48,7 +48,7 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
             cStmt.setInt(2, 0);
             ResultSet rs = cStmt.executeQuery();
 
-            if(rs.next()) {
+            while(rs.next()) {
                 Employee employee = new Employee();
                 System.out.println(rs.getInt(1));
                 employee.setEmployeeId(rs.getInt(1));
