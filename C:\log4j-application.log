@@ -670,3 +670,6 @@ The last packet successfully received from the server was 280 milliseconds ago. 
 2021-09-01 12:31:33 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
 2021-09-01 12:31:39 INFO  MySQL:33 - MySQL Driver Registered! :)
 2021-09-01 12:31:39 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 13:31:18 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 13:31:19 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 13:31:19 INFO  Main:440 - New Person Record Inserted. ID = 12

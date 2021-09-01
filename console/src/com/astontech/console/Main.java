@@ -36,10 +36,11 @@ public class Main {
 //        LessonGetStoredProc();
 //        LessonDAO();
 //        SQLServerTest();
-        EmployeeDAOTest();
+//        EmployeeDAOTest();
 //        VehicleDAOTest();
 //        VehicleModelDAOTest();
 //        VehicleMakeDAOTest();
+//        LessonPersonInsert();
     }
 
     private static void Welcome() {
@@ -419,5 +420,23 @@ public class Main {
         System.out.println("Vehicle Make Id: " + vehicleMakeDetail.getVehicleMakeId());
         System.out.println("Vehicle Make Name: " + vehicleMakeDetail.getVehicleMakeName());
         //endregion
+    }
+
+    private static void LessonPersonInsert() {
+        Person person = new Person();
+        person.setTitle("Mr.");
+        person.setFirstName("Richard");
+        person.setMiddleName("");
+        person.setLastName("Harder");
+        person.setBirthDate(new Date(1987, 11, 24));
+        person.setCreateDate(new Date(System.currentTimeMillis()));
+        person.setDisplayFirstName("Dick");
+        person.setIsDeleted(false);
+        person.setGender("Male");
+        person.setSocialSecurityNumber("xxx-xx-xxxx");
+
+        PersonDAO personDAO = new PersonDAOImplementation();
+        int id = personDAO.insertPerson(person);
+        logger.info("New Person Record Inserted. ID = " + id);
     }
 }
