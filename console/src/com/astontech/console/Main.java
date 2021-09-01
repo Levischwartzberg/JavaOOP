@@ -40,7 +40,9 @@ public class Main {
 //        VehicleDAOTest();
 //        VehicleModelDAOTest();
 //        VehicleMakeDAOTest();
-//        LessonPersonInsert();
+        LessonPersonInsert();
+//        LessonPersonUpdate();
+//        LessonPersonDelete();
     }
 
     private static void Welcome() {
@@ -438,5 +440,20 @@ public class Main {
         PersonDAO personDAO = new PersonDAOImplementation();
         int id = personDAO.insertPerson(person);
         logger.info("New Person Record Inserted. ID = " + id);
+    }
+
+    private static void LessonPersonUpdate() {
+        PersonDAO personDAO = new PersonDAOImplementation();
+        Person person = personDAO.getPersonById(12);
+        person.setMiddleName("Sach");
+
+        personDAO.updatePerson(person);
+    }
+
+    private static void LessonPersonDelete() {
+        PersonDAO personDAO = new PersonDAOImplementation();
+        Person person = personDAO.getPersonById(12);
+
+        personDAO.deletePerson(person.getPersonId());
     }
 }

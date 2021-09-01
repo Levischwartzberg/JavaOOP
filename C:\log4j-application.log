@@ -673,3 +673,23 @@ The last packet successfully received from the server was 280 milliseconds ago. 
 2021-09-01 13:31:18 INFO  MySQL:33 - MySQL Driver Registered! :)
 2021-09-01 13:31:19 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
 2021-09-01 13:31:19 INFO  Main:440 - New Person Record Inserted. ID = 12
+2021-09-01 15:45:04 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 15:45:05 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 15:45:05 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 15:45:05 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 15:46:05 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 15:46:06 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 15:46:06 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 15:46:06 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 15:46:06 ERROR MySQL:116 - java.sql.SQLException: Column Index out of range, 12 > 1. 
+2021-09-01 15:48:36 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 15:48:37 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 15:48:37 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 15:48:37 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 15:48:37 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 15:48:37 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 15:48:37 ERROR MySQL:116 - java.sql.SQLException: Column Index out of range, 12 > 1. 
+2021-09-01 15:49:07 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-01 15:49:07 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-01 15:49:07 ERROR MySQL:116 - java.sql.SQLException: Column Index out of range, 0 < 1.
+2021-09-01 15:49:07 INFO  Main:442 - New Person Record Inserted. ID = 0
