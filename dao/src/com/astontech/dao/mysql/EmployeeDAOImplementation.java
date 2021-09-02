@@ -2,6 +2,7 @@ package com.astontech.dao.mysql;
 
 import com.astontech.bo.Employee;
 import com.astontech.dao.EmployeeDAO;
+import common.helpers.DateHelper;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -54,17 +55,17 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
 
     @Override
     public int insertEmployee(Employee employee) {
-        return 0;
+        return ExecEmployee(employee, INSERT);
     }
 
     @Override
     public boolean updateEmployee(Employee employee) {
-        return false;
+        return ExecEmployee(employee, UPDATE) > 0;
     }
 
     @Override
     public boolean deleteEmployee(int employeeId) {
-        return false;
+        return ExecEmployee(getEmployeeById(employeeId), DELETE) > 0;
     }
 
     private static Employee HydrateEmployee(ResultSet rs) throws SQLException {
@@ -77,5 +78,33 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
         employee.setCreateDate(rs.getDate(6));
 
         return employee;
+    }
+
+    private static int ExecEmployee(Employee employee, int operation) {
+        Connect();
+        int id = 0;
+
+        try {
+            String sp = "{call ExecEmployee(?,?,?,?,?,?,?,?)}";
+
+            CallableStatement cStmt = connection.prepareCall(sp);
+            cStmt.setInt(1,operation);
+            cStmt.setInt(2,employee.getEmployeeId());
+            cStmt.setDate(3, DateHelper.utilDateToSqlDate(employee.getHireDate()));
+            cStmt.setDate(4, DateHelper.utilDateToSqlDate(employee.getTermDate()));
+            cStmt.setDate(5, DateHelper.utilDateToSqlDate(employee.getBirthDate()));
+            cStmt.setInt(6, employee.getPersonId());
+            cStmt.setDate(7, DateHelper.utilDateToSqlDate(employee.getCreateDate()));
+
+            ResultSet rs = cStmt.executeQuery();
+            if(rs.next()) {
+                id = rs.getInt(1);
+                return id;
+            }
+
+        } catch (SQLException sqlEx) {
+            logger.error(sqlEx);
+        }
+        return id;
     }
 }
