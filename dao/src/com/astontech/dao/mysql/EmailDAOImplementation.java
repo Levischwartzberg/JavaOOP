@@ -3,6 +3,7 @@ package com.astontech.dao.mysql;
 import com.astontech.bo.Email;
 import com.astontech.dao.EmailDAO;
 import com.astontech.dao.EmployeeDAO;
+import com.astontech.dao.EntityTypeDAO;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -72,12 +73,13 @@ public class EmailDAOImplementation extends MySQL implements EmailDAO {
 
     private static Email HydrateEmail(ResultSet rs) throws SQLException {
         EmployeeDAO employeeDAO = new EmployeeDAOImplementation();
+        EntityTypeDAO entityTypeDAO = new EntityTypeDAOImplementation();
 
         Email email = new Email();
         email.setEmailId(rs.getInt(1));
         email.setEmailAddress(rs.getString(2));
         email.setEmployee(employeeDAO.getEmployeeById(rs.getInt(3)));
-//                email.setEntityType(rs.getInt(4));
+        email.setEmailType(entityTypeDAO.getEntityTypeById(rs.getInt(4)));
 
         return email;
     }

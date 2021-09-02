@@ -556,26 +556,26 @@ public class Main {
 
     private static void PhoneExecTests() {
         //region INSERT PHONE
-        EntityTypeDAO entityTypeDAO = new EntityTypeDAOImplementation();
-        EntityType entityType = entityTypeDAO.getEntityTypeById(10);
-
-        ClientDAO clientDAO = new ClientDAOImplementation();
-        Client client = clientDAO.getClientById(11);
-
-        PersonDAO personDAO = new PersonDAOImplementation();
-        Person person = personDAO.getPersonById(13);
-
-        Phone phone = new Phone();
-        phone.setEntityType(entityType);
-        phone.setClient(client);
-        phone.setPerson(person);
-        phone.setAreaCode(612);
-        phone.setPhoneNumber(1548672);
-        phone.setPhoneNumberPost(123);
-
-        PhoneDAO phoneDAO = new PhoneDAOImplementation();
-        int id = phoneDAO.insertPhone(phone);
-        logger.info("New Phone Inserted. ID = " + id);
+//        EntityTypeDAO entityTypeDAO = new EntityTypeDAOImplementation();
+//        EntityType entityType = entityTypeDAO.getEntityTypeById(10);
+//
+//        ClientDAO clientDAO = new ClientDAOImplementation();
+//        Client client = clientDAO.getClientById(11);
+//
+//        PersonDAO personDAO = new PersonDAOImplementation();
+//        Person person = personDAO.getPersonById(13);
+//
+//        Phone phone = new Phone();
+//        phone.setEntityType(entityType);
+//        phone.setClient(client);
+//        phone.setPerson(person);
+//        phone.setAreaCode(612);
+//        phone.setPhoneNumber(1548672);
+//        phone.setPhoneNumberPost(123);
+//
+//        PhoneDAO phoneDAO = new PhoneDAOImplementation();
+//        int id = phoneDAO.insertPhone(phone);
+//        logger.info("New Phone Inserted. ID = " + id);
         //endregion
 
         //region UPDATE PHONE
