@@ -42,11 +42,11 @@ public class Phone extends BaseBO implements ContactInfo {
         PhoneId = phoneId;
     }
 
-    public EntityType getEntityTypeId() {
+    public EntityType getEntityType() {
         return EntityType;
     }
 
-    public void setEntityTypeId(EntityType entityType) {
+    public void setEntityType(EntityType entityType) {
         EntityType = entityType;
     }
 

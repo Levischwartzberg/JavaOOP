@@ -3,6 +3,7 @@ package com.astontech.dao.mysql;
 import com.astontech.bo.Phone;
 import com.astontech.dao.PersonDAO;
 import com.astontech.dao.PhoneDAO;
+import common.helpers.DateHelper;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -57,17 +58,17 @@ public class PhoneDAOImplementation extends MySQL implements PhoneDAO {
 
     @Override
     public int insertPhone(Phone phone) {
-        return 0;
+        return ExecPhone(phone, INSERT);
     }
 
     @Override
     public boolean updatePhone(Phone phone) {
-        return false;
+        return ExecPhone(phone, UPDATE) > 0;
     }
 
     @Override
     public boolean deletePhone(int phoneId) {
-        return false;
+        return ExecPhone(getPhoneById(phoneId), DELETE) > 0;
     }
 
     private static Phone HydratePhone(ResultSet rs) throws SQLException {
@@ -83,5 +84,35 @@ public class PhoneDAOImplementation extends MySQL implements PhoneDAO {
         phone.setPhoneNumberPost(rs.getInt(7));
 
         return phone;
+    }
+
+    private static int ExecPhone(Phone phone, int operation) {
+        System.out.println(phone.getPhoneId() + " " + operation);
+        Connect();
+        int id = 0;
+
+        try {
+            String sp = "{call ExecPhone(?,?,?,?,?,?,?,?)}";
+
+            CallableStatement cStmt = connection.prepareCall(sp);
+            cStmt.setInt(1,operation);
+            cStmt.setInt(2,phone.getPhoneId());
+            cStmt.setInt(3, phone.getEntityType().getEntityTypeId());
+            cStmt.setInt(4, phone.getClient().getClientId());
+            cStmt.setInt(5, phone.getPerson().getPersonId());
+            cStmt.setInt(6, phone.getAreaCode());
+            cStmt.setInt(7, phone.getPhoneNumber());
+            cStmt.setInt(8,phone.getPhoneNumberPost());
+
+            ResultSet rs = cStmt.executeQuery();
+            if(rs.next()) {
+                id = rs.getInt(1);
+                return id;
+            }
+
+        } catch (SQLException sqlEx) {
+            logger.error(sqlEx);
+        }
+        return id;
     }
 }
