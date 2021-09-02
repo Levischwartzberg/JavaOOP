@@ -4,6 +4,7 @@ import com.astontech.bo.Vehicle;
 import com.astontech.bo.VehicleModel;
 import com.astontech.dao.VehicleDAO;
 import com.astontech.dao.VehicleModelDAO;
+import common.helpers.DateHelper;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -60,17 +61,17 @@ public class VehicleDAOImplementation extends MySQL implements VehicleDAO {
 
     @Override
     public int insertVehicle(Vehicle vehicle) {
-        return 0;
+        return ExecVehicle(vehicle, INSERT);
     }
 
     @Override
     public boolean updateVehicle(Vehicle vehicle) {
-        return false;
+        return ExecVehicle(vehicle, UPDATE) > 0;
     }
 
     @Override
-    public boolean deleteVehicle(int personId) {
-        return false;
+    public boolean deleteVehicle(int vehicleId) {
+        return ExecVehicle(getVehicleById(vehicleId), DELETE) > 0;
     }
 
     private static Vehicle HydrateVehicle(ResultSet rs) throws SQLException {
@@ -88,5 +89,37 @@ public class VehicleDAOImplementation extends MySQL implements VehicleDAO {
         vehicle.setVehicleModel(vehicleModelDao.getVehicleModelById(rs.getInt(9)));
 
         return vehicle;
+    }
+
+    private static int ExecVehicle(Vehicle vehicle, int operation) {
+        System.out.println(vehicle.getVehicleId() + " " + operation);
+        Connect();
+        int id = 0;
+
+        try {
+            String sp = "{call ExecVehicle(?,?,?,?,?,?,?,?,?,?)}";
+
+            CallableStatement cStmt = connection.prepareCall(sp);
+            cStmt.setInt(1,operation);
+            cStmt.setInt(2,vehicle.getVehicleId());
+            cStmt.setInt(3, vehicle.getYear());
+            cStmt.setString(4, vehicle.getLicensePlate());
+            cStmt.setString(5, vehicle.getVIN());
+            cStmt.setString(6, vehicle.getColor());
+            cStmt.setBoolean(7, vehicle.getPurchased());
+            cStmt.setInt(8,vehicle.getPurchasePrice());
+            cStmt.setDate(9, DateHelper.utilDateToSqlDate(vehicle.getPurchaseDate()));
+            cStmt.setInt(10,vehicle.getVehicleModel().getVehicleModelId());
+
+            ResultSet rs = cStmt.executeQuery();
+            if(rs.next()) {
+                id = rs.getInt(1);
+                return id;
+            }
+
+        } catch (SQLException sqlEx) {
+            logger.error(sqlEx);
+        }
+        return id;
     }
 }

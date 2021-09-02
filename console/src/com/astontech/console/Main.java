@@ -46,7 +46,8 @@ public class Main {
 //        VehicleMakeExecTest();
 //        VehicleMakeUpdateTest();
 //        VehicleMakeDeleteTest();
-        VehicleModelExecTests();
+//        VehicleModelExecTests();
+//        VehicleExecTests();
     }
 
     private static void Welcome() {
@@ -513,6 +514,42 @@ public class Main {
 //        VehicleModel vehicleModel = vehicleModelDAO.getVehicleModelById(26);
 //
 //        vehicleModelDAO.deleteVehicleModel(vehicleModel.getVehicleModelId());
+        //endregion
+    }
+
+    private static void VehicleExecTests() {
+        //region INSERT VEHICLE
+        VehicleModelDAO vehicleModelDAO = new VehicleModelDAOImplementation();
+        VehicleModel vehicleModel = vehicleModelDAO.getVehicleModelById(25);
+
+        Vehicle vehicle = new Vehicle();
+        vehicle.setYear(2017);
+        vehicle.setLicensePlate("WRU666");
+        vehicle.setColor("Blue");
+        vehicle.setVIN("142637agsheyt");
+        vehicle.setPurchased(true);
+        vehicle.setPurchasePrice(18000);
+        vehicle.setPurchaseDate(new Date(2018,4,26));
+        vehicle.setVehicleModel(vehicleModel);
+
+        VehicleDAO vehicleDAO = new VehicleDAOImplementation();
+        int id = vehicleDAO.insertVehicle(vehicle);
+        logger.info("New Vehicle Record Inserted. ID = " + id);
+        //endregion
+
+        //region UPDATE VEHICLE MODEL
+//        VehicleDAO vehicleDAO = new VehicleDAOImplementation();
+//        Vehicle vehicle = vehicleDAO.getVehicleById(23);
+//
+//        vehicle.setVIN("ane58b839f8h0");
+//        vehicleDAO.updateVehicle(vehicle);
+        //endregion
+
+        //region DELETE VEHICLE MODEL
+//        VehicleDAO vehicleDAO = new VehicleDAOImplementation();
+//        Vehicle vehicle = vehicleDAO.getVehicleById(23);
+//
+//        vehicleDAO.deleteVehicle(vehicle.getVehicleId());
         //endregion
     }
 }
