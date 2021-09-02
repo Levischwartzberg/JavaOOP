@@ -1,6 +1,8 @@
 package com.astontech.dao.mysql;
 
 import com.astontech.bo.Phone;
+import com.astontech.dao.ClientDAO;
+import com.astontech.dao.EntityTypeDAO;
 import com.astontech.dao.PersonDAO;
 import com.astontech.dao.PhoneDAO;
 import common.helpers.DateHelper;
@@ -73,11 +75,13 @@ public class PhoneDAOImplementation extends MySQL implements PhoneDAO {
 
     private static Phone HydratePhone(ResultSet rs) throws SQLException {
         PersonDAO personDAO = new PersonDAOImplementation();
+        EntityTypeDAO entityTypeDAO = new EntityTypeDAOImplementation();
+        ClientDAO clientDAO = new ClientDAOImplementation();
 
         Phone phone = new Phone();
         phone.setPhoneId(rs.getInt(1));
-//                phone.setEntityTypeId(rs.getInt(2));
-//                phone.setClient(rs.getInt(3));
+        phone.setEntityType(entityTypeDAO.getEntityTypeById(rs.getInt(2)));
+        phone.setClient(clientDAO.getClientById(rs.getInt(3)));
         phone.setPerson(personDAO.getPersonById(rs.getInt(4)));
         phone.setAreaCode(rs.getInt(5));
         phone.setPhoneNumber(rs.getInt(6));
