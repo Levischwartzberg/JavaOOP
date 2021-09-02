@@ -84,7 +84,7 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
         int id = 0;
 
         try {
-            String sp = "{call ExecEmployee(?,?,?,?,?,?,?,?)}";
+            String sp = "{call ExecEmployee(?,?,?,?,?,?)}";
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

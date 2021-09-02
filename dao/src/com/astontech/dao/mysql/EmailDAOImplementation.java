@@ -57,17 +57,17 @@ public class EmailDAOImplementation extends MySQL implements EmailDAO {
 
     @Override
     public int insertEmail(Email email) {
-        return 0;
+        return ExecEmail(email, INSERT);
     }
 
     @Override
     public boolean updateEmail(Email email) {
-        return false;
+        return ExecEmail(email, UPDATE) > 0;
     }
 
     @Override
     public boolean deleteEmail(int emailId) {
-        return false;
+        return ExecEmail(getEmailById(emailId), DELETE) > 0;
     }
 
     private static Email HydrateEmail(ResultSet rs) throws SQLException {
@@ -80,5 +80,31 @@ public class EmailDAOImplementation extends MySQL implements EmailDAO {
 //                email.setEntityType(rs.getInt(4));
 
         return email;
+    }
+
+    private static int ExecEmail(Email email, int operation) {
+        Connect();
+        int id = 0;
+
+        try {
+            String sp = "{call ExecEmail(?,?,?,?,?)}";
+
+            CallableStatement cStmt = connection.prepareCall(sp);
+            cStmt.setInt(1,operation);
+            cStmt.setInt(2,email.getEmailId());
+            cStmt.setString(3, email.getEmailAddress());
+            cStmt.setInt(4, email.getEmployee().getEmployeeId());
+            cStmt.setInt(5, email.getEmailType().getEntityTypeId());
+
+            ResultSet rs = cStmt.executeQuery();
+            if(rs.next()) {
+                id = rs.getInt(1);
+                return id;
+            }
+
+        } catch (SQLException sqlEx) {
+            logger.error(sqlEx);
+        }
+        return id;
     }
 }
