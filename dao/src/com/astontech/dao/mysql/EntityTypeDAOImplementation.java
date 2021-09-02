@@ -18,7 +18,7 @@ public class EntityTypeDAOImplementation extends MySQL implements EntityTypeDAO 
         EntityType entityType = null;
 
         try {
-            String sp = "{call GetEntityType(?,?)}";
+            String sp = getEntityType;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, entityTypeId);
@@ -39,7 +39,7 @@ public class EntityTypeDAOImplementation extends MySQL implements EntityTypeDAO 
         List<EntityType> entityTypeList = new ArrayList<EntityType>();
 
         try {
-            String sp = "{call GetEntityType(?,?)}";
+            String sp = getEntityType;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -89,7 +89,7 @@ public class EntityTypeDAOImplementation extends MySQL implements EntityTypeDAO 
         int id = 0;
 
         try {
-            String sp = "{call ExecEntityType(?,?,?,?)}";
+            String sp = execEntityType;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

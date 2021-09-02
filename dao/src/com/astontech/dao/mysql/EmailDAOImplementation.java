@@ -18,7 +18,7 @@ public class EmailDAOImplementation extends MySQL implements EmailDAO {
         Email email = null;
 
         try {
-            String sp = "{call GetEmail(?,?)}";
+            String sp = getEmail;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, emailId);
@@ -39,7 +39,7 @@ public class EmailDAOImplementation extends MySQL implements EmailDAO {
         List<Email> emailList = new ArrayList<Email>();
 
         try {
-            String sp = "{call GetEmail(?,?)}";
+            String sp = getEmail;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -89,7 +89,7 @@ public class EmailDAOImplementation extends MySQL implements EmailDAO {
         int id = 0;
 
         try {
-            String sp = "{call ExecEmail(?,?,?,?,?)}";
+            String sp = execEmail;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

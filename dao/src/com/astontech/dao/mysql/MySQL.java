@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public abstract class MySQL {
+public abstract class MySQL extends Procedures {
     protected static String dbHost = "localhost";
     protected static String dbName = "astonengineer";
     protected static String dbUser = "consoleUser";

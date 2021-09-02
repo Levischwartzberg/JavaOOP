@@ -18,7 +18,7 @@ public class VehicleModelDAOImplementation extends MySQL implements VehicleModel
         VehicleModel vehicleModel = null;
 
         try {
-            String sp = "{call GetVehicleModel(?,?)}";
+            String sp = getVehicleModel;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, vehicleModelId);
@@ -39,7 +39,7 @@ public class VehicleModelDAOImplementation extends MySQL implements VehicleModel
         List<VehicleModel> vehicleModelList = new ArrayList<VehicleModel>();
 
         try {
-            String sp = "{call GetVehicleModel(?,?)}";
+            String sp = getVehicleModel;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -88,7 +88,7 @@ public class VehicleModelDAOImplementation extends MySQL implements VehicleModel
         int id = 0;
 
         try {
-            String sp = "{call ExecVehicleModel(?,?,?,?)}";
+            String sp = execVehicleModel;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

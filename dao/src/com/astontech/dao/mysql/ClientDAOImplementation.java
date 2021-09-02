@@ -17,7 +17,7 @@ public class ClientDAOImplementation extends MySQL implements ClientDAO {
         Client client = null;
 
         try {
-            String sp = "{call GetClient(?,?)}";
+            String sp = getClient;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, clientId);
@@ -39,7 +39,7 @@ public class ClientDAOImplementation extends MySQL implements ClientDAO {
 
 
         try {
-            String sp = "{call GetClient(?,?)}";
+            String sp = getClient;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -87,7 +87,7 @@ public class ClientDAOImplementation extends MySQL implements ClientDAO {
         int id = 0;
 
         try {
-            String sp = "{call ExecClient(?,?,?,?)}";
+            String sp = execClient;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

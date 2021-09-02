@@ -16,7 +16,7 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
         Connect();
         Employee employee = null;
         try {
-            String sp = "{call GetEmployee(?,?)}";
+            String sp = getEmployee;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, employeeId);
@@ -36,7 +36,7 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
         Connect();
         ArrayList<Employee> employeeList = new ArrayList<Employee>();
         try {
-            String sp = "{call GetEmployee(?,?)}";
+            String sp = getEmployee;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -84,7 +84,7 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
         int id = 0;
 
         try {
-            String sp = "{call ExecEmployee(?,?,?,?,?,?)}";
+            String sp = execEmployee;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

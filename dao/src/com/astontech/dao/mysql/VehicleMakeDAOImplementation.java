@@ -16,7 +16,7 @@ public class VehicleMakeDAOImplementation extends MySQL implements VehicleMakeDA
         Connect();
         VehicleMake vehicleMake = null;
         try {
-            String sp = "{call GetVehicleMake(?,?)}";
+            String sp = getVehicleMake;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, vehicleMakeId);
@@ -36,7 +36,7 @@ public class VehicleMakeDAOImplementation extends MySQL implements VehicleMakeDA
         Connect();
         List<VehicleMake> vehicleMakeList = new ArrayList<VehicleMake>();
         try {
-            String sp = "{call GetVehicleMake(?,?)}";
+            String sp = getVehicleMake;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -82,8 +82,7 @@ public class VehicleMakeDAOImplementation extends MySQL implements VehicleMakeDA
         Connect();
         int id = 0;
         try {
-            //        call ExecPerson(10, null, 'Mr.', 'Richard', 'null', 'Harder', 'feck', 'Dick', false, 'Male', 'arse', 'xxx-xx-xxxx');
-            String sp = "{call ExecVehicleMake(?,?,?,?)}";
+            String sp = execVehicleMake;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

@@ -5,7 +5,7 @@ import com.astontech.dao.ClientDAO;
 import com.astontech.dao.EntityTypeDAO;
 import com.astontech.dao.PersonDAO;
 import com.astontech.dao.PhoneDAO;
-import common.helpers.DateHelper;
+import com.astontech.dao.mysql.Procedures;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -20,7 +20,7 @@ public class PhoneDAOImplementation extends MySQL implements PhoneDAO {
         Phone phone = null;
 
         try {
-            String sp = "{call GetPhone(?,?)}";
+            String sp = getPhone;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, phoneId);
@@ -41,7 +41,7 @@ public class PhoneDAOImplementation extends MySQL implements PhoneDAO {
         List<Phone> phoneList = new ArrayList<Phone>();
 
         try {
-            String sp = "{call GetPhone(?,?)}";
+            String sp = getPhone;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -96,7 +96,7 @@ public class PhoneDAOImplementation extends MySQL implements PhoneDAO {
         int id = 0;
 
         try {
-            String sp = "{call ExecPhone(?,?,?,?,?,?,?,?)}";
+            String sp = execPhone;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

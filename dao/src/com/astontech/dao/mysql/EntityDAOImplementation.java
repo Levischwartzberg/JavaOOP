@@ -16,7 +16,7 @@ public class EntityDAOImplementation extends MySQL implements EntityDAO {
         Entity entity = null;
 
         try {
-            String sp = "{call GetEntity(?,?)}";
+            String sp = getEntity;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, entityId);
@@ -37,7 +37,7 @@ public class EntityDAOImplementation extends MySQL implements EntityDAO {
         List<Entity> entityList = new ArrayList<Entity>();
 
         try {
-            String sp = "{call GetEntity(?,?)}";
+            String sp = getEntity;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -84,7 +84,7 @@ public class EntityDAOImplementation extends MySQL implements EntityDAO {
         int id = 0;
 
         try {
-            String sp = "{call ExecEntity(?,?,?)}";
+            String sp = execEntity;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

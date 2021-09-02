@@ -19,7 +19,7 @@ public class VehicleDAOImplementation extends MySQL implements VehicleDAO {
         Vehicle vehicle = null;
 
         try {
-            String sp = "{call GetVehicle(?,?)}";
+            String sp = getVehicle;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, vehicleId);
@@ -42,7 +42,7 @@ public class VehicleDAOImplementation extends MySQL implements VehicleDAO {
         VehicleModelDAO vehicleModelDao = new VehicleModelDAOImplementation();
 
         try {
-            String sp = "{call GetVehicle(?,?)}";
+            String sp = getVehicle;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -97,7 +97,7 @@ public class VehicleDAOImplementation extends MySQL implements VehicleDAO {
         int id = 0;
 
         try {
-            String sp = "{call ExecVehicle(?,?,?,?,?,?,?,?,?,?)}";
+            String sp = execVehicle;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);

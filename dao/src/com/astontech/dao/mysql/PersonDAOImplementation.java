@@ -16,7 +16,7 @@ public class PersonDAOImplementation extends MySQL implements PersonDAO {
         Connect();
         Person person = null;
         try {
-            String sp = "{call GetPerson(?,?)}";
+            String sp = getPerson;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_BY_ID);
             cStmt.setInt(2, personId);
@@ -36,7 +36,7 @@ public class PersonDAOImplementation extends MySQL implements PersonDAO {
         Connect();
         List<Person> personList = new ArrayList<Person>();
         try {
-            String sp = "{call GetPerson(?,?)}";
+            String sp = getPerson;
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,GET_COLLECTION);
             cStmt.setInt(2, 0);
@@ -91,7 +91,7 @@ public class PersonDAOImplementation extends MySQL implements PersonDAO {
         int id = 0;
         try {
             //        call ExecPerson(10, null, 'Mr.', 'Richard', 'null', 'Harder', 'feck', 'Dick', false, 'Male', 'arse', 'xxx-xx-xxxx');
-            String sp = "{call ExecPerson(?,?,?,?,?,?,?,?,?,?,?,?)}";
+            String sp = execPerson;
 
             CallableStatement cStmt = connection.prepareCall(sp);
             cStmt.setInt(1,operation);
