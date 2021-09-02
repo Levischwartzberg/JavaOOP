@@ -38,11 +38,11 @@ public class EntityType extends BaseBO{
         EntityTypeName = entityTypeName;
     }
 
-    public Entity getEntityId() {
+    public Entity getEntity() {
         return Entity;
     }
 
-    public void setEntityId(Entity entity) {
+    public void setEntity(Entity entity) {
         Entity = entity;
     }
     //endregion
