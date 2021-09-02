@@ -40,9 +40,12 @@ public class Main {
 //        VehicleDAOTest();
 //        VehicleModelDAOTest();
 //        VehicleMakeDAOTest();
-        LessonPersonInsert();
+//        LessonPersonInsert();
 //        LessonPersonUpdate();
 //        LessonPersonDelete();
+        VehicleMakeExecTest();
+//        VehicleMakeUpdateTest();
+//        VehicleMakeDeleteTest();
     }
 
     private static void Welcome() {
@@ -455,5 +458,30 @@ public class Main {
         Person person = personDAO.getPersonById(12);
 
         personDAO.deletePerson(person.getPersonId());
+    }
+
+    private static void VehicleMakeExecTest() {
+        VehicleMake vehicleMake = new VehicleMake();
+        vehicleMake.setVehicleMakeName("Chevrolet");
+        vehicleMake.setCreateDate(new Date(System.currentTimeMillis()));
+
+        VehicleMakeDAO vehicleMakeDAO = new VehicleMakeDAOImplementation();
+        int id = vehicleMakeDAO.insertVehicleMake(vehicleMake);
+        logger.info("New Vehicle Make Record Inserted. ID = " + id);
+    }
+
+    private static void VehicleMakeUpdateTest() {
+        VehicleMakeDAO vehicleMakeDAO = new VehicleMakeDAOImplementation();
+        VehicleMake vehicleMake = vehicleMakeDAO.getVehicleMakeById(11);
+
+        vehicleMake.setVehicleMakeName("DERP!");
+        vehicleMakeDAO.updateVehicleMake(vehicleMake);
+    }
+
+    private static void VehicleMakeDeleteTest() {
+        VehicleMakeDAO vehicleMakeDAO = new VehicleMakeDAOImplementation();
+        VehicleMake vehicleMake = vehicleMakeDAO.getVehicleMakeById(11);
+
+        vehicleMakeDAO.deleteVehicleMake(vehicleMake.getVehicleMakeId());
     }
 }

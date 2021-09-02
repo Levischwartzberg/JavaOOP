@@ -693,3 +693,85 @@ The last packet successfully received from the server was 280 milliseconds ago. 
 2021-09-01 15:49:07 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
 2021-09-01 15:49:07 ERROR MySQL:116 - java.sql.SQLException: Column Index out of range, 0 < 1.
 2021-09-01 15:49:07 INFO  Main:442 - New Person Record Inserted. ID = 0
+2021-09-02 09:43:32 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 09:43:33 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 09:43:33 ERROR MySQL:101 - java.sql.SQLException: No value specified for parameter 5
+2021-09-02 09:43:33 INFO  Main:468 - New Vehicle Make Record Inserted. ID = 0
+2021-09-02 09:45:03 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 09:45:04 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 09:45:04 ERROR MySQL:101 - java.sql.SQLException: Column Index out of range, 0 < 1.
+2021-09-02 09:45:04 INFO  Main:468 - New Vehicle Make Record Inserted. ID = 0
+2021-09-02 09:49:40 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 09:49:41 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 09:49:41 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 09:49:41 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 09:49:42 ERROR MySQL:102 - java.sql.SQLException: Column Index out of range, 11 > 1. 
+2021-09-02 09:52:01 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 09:52:02 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 09:52:02 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 09:52:02 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 09:52:02 ERROR MySQL:103 - java.sql.SQLException: Column Index out of range, 11 > 1. 
+2021-09-02 09:57:57 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 09:57:58 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 09:57:58 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 09:57:58 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 09:57:58 ERROR MySQL:103 - java.sql.SQLException: Column Index out of range, 11 > 1. 
+2021-09-02 10:07:16 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:07:17 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:07:17 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:07:17 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:07:17 ERROR MySQL:104 - java.sql.SQLException: Column Index out of range, 11 > 1. 
+2021-09-02 10:07:54 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:07:55 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:07:55 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:07:55 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:07:55 ERROR MySQL:104 - java.sql.SQLException: Before start of result set
+2021-09-02 10:08:43 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:08:44 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:08:44 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:08:44 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:08:44 ERROR MySQL:104 - java.sql.SQLException: Before start of result set
+2021-09-02 10:08:55 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:08:56 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:08:56 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:08:56 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:08:56 ERROR MySQL:103 - java.sql.SQLException: Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+2021-09-02 10:10:11 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:10:12 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:10:12 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:10:12 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:10:12 ERROR MySQL:103 - java.sql.SQLException: Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+2021-09-02 10:10:28 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:10:29 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:10:29 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:10:29 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:11:25 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:11:26 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:11:27 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:11:27 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:12:10 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:12:11 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:12:11 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:12:11 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:12:11 ERROR MySQL:103 - java.sql.SQLException: Column Index out of range, 2 > 1. 
+2021-09-02 10:12:22 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:12:24 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:12:24 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:12:24 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:14:48 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:14:50 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:14:50 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:14:50 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:16:11 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:16:12 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:16:12 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:16:12 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:16:37 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:16:38 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:16:38 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:16:38 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:16:38 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:16:38 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:17:29 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 10:17:30 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 10:17:30 INFO  Main:470 - New Vehicle Make Record Inserted. ID = 12

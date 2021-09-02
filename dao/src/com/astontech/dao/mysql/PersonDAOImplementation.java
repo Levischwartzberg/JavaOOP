@@ -86,7 +86,7 @@ public class PersonDAOImplementation extends MySQL implements PersonDAO {
     }
 
     private static int ExecPerson(Person person, int operation) {
-        System.out.println(person.getPersonId() + operation);
+        System.out.println(person.getPersonId() + " " + operation);
         Connect();
         int id = 0;
         try {
@@ -109,7 +109,7 @@ public class PersonDAOImplementation extends MySQL implements PersonDAO {
 
             ResultSet rs = cStmt.executeQuery();
             if(rs.next()) {
-                id = rs.getInt(person.getPersonId());
+                id = rs.getInt(1);
                 return id;
             }
 

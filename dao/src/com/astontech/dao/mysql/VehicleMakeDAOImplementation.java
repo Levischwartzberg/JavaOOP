@@ -2,6 +2,7 @@ package com.astontech.dao.mysql;
 
 import com.astontech.bo.VehicleMake;
 import com.astontech.dao.VehicleMakeDAO;
+import common.helpers.DateHelper;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -54,17 +55,17 @@ public class VehicleMakeDAOImplementation extends MySQL implements VehicleMakeDA
 
     @Override
     public int insertVehicleMake(VehicleMake vehicleMake) {
-        return 0;
+        return execVehicleMake(vehicleMake, INSERT);
     }
 
     @Override
     public boolean updateVehicleMake(VehicleMake vehicleMake) {
-        return false;
+        return execVehicleMake(vehicleMake, UPDATE) > 0;
     }
 
     @Override
-    public boolean deleteVehicleMake(int vehicleId) {
-        return false;
+    public boolean deleteVehicleMake(int vehicleMakeId) {
+        return execVehicleMake(getVehicleMakeById(vehicleMakeId), DELETE) > 0;
     }
 
     private static VehicleMake HydrateVehicleMake(ResultSet rs) throws SQLException {
@@ -74,5 +75,32 @@ public class VehicleMakeDAOImplementation extends MySQL implements VehicleMakeDA
         vehicleMake.setCreateDate(rs.getDate(3));
 
         return vehicleMake;
+    }
+
+    private static int execVehicleMake(VehicleMake vehicleMake, int operation) {
+        System.out.println(vehicleMake.getVehicleMakeId() + " " + operation);
+        Connect();
+        int id = 0;
+        try {
+            //        call ExecPerson(10, null, 'Mr.', 'Richard', 'null', 'Harder', 'feck', 'Dick', false, 'Male', 'arse', 'xxx-xx-xxxx');
+            String sp = "{call ExecVehicleMake(?,?,?,?)}";
+
+            CallableStatement cStmt = connection.prepareCall(sp);
+            cStmt.setInt(1,operation);
+            cStmt.setInt(2,vehicleMake.getVehicleMakeId());
+            cStmt.setString(3, vehicleMake.getVehicleMakeName());
+            cStmt.setDate(4, DateHelper.utilDateToSqlDate((vehicleMake.getCreateDate())));
+
+            ResultSet rs = cStmt.executeQuery();
+            if(rs.next()) {
+                id = rs.getInt(1);
+                return id;
+            }
+
+        } catch (SQLException sqlEx) {
+            System.out.println("WHEP!");
+            logger.error(sqlEx);
+        }
+        return id;
     }
 }
