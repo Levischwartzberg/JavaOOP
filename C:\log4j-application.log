@@ -862,3 +862,7 @@ The last packet successfully received from the server was 280 milliseconds ago. 
 2021-09-02 11:48:27 INFO  MySQL:33 - MySQL Driver Registered! :)
 2021-09-02 11:48:27 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
 2021-09-02 11:48:27 INFO  Main:537 - New Vehicle Record Inserted. ID = 24
+2021-09-02 12:32:29 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 12:32:30 INFO  MySQL:42 - Succesfully connected to mySQL database! :)
+2021-09-02 12:32:34 INFO  MySQL:33 - MySQL Driver Registered! :)
+2021-09-02 12:32:34 INFO  MySQL:42 - Succesfully connected to mySQL database! :)

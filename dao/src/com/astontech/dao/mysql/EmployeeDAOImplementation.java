@@ -73,9 +73,8 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
         employee.setEmployeeId(rs.getInt(1));
         employee.setHireDate(rs.getDate(2));
         employee.setTermDate(rs.getDate(3));
-        employee.setBirthDate(rs.getDate(4));
-        employee.setPersonId(rs.getInt(5));
-        employee.setCreateDate(rs.getDate(6));
+        employee.setPersonId(rs.getInt(4));
+        employee.setCreateDate(rs.getDate(5));
 
         return employee;
     }
@@ -92,9 +91,8 @@ public class EmployeeDAOImplementation extends MySQL implements EmployeeDAO {
             cStmt.setInt(2,employee.getEmployeeId());
             cStmt.setDate(3, DateHelper.utilDateToSqlDate(employee.getHireDate()));
             cStmt.setDate(4, DateHelper.utilDateToSqlDate(employee.getTermDate()));
-            cStmt.setDate(5, DateHelper.utilDateToSqlDate(employee.getBirthDate()));
-            cStmt.setInt(6, employee.getPersonId());
-            cStmt.setDate(7, DateHelper.utilDateToSqlDate(employee.getCreateDate()));
+            cStmt.setInt(5, employee.getPersonId());
+            cStmt.setDate(6, DateHelper.utilDateToSqlDate(employee.getCreateDate()));
 
             ResultSet rs = cStmt.executeQuery();
             if(rs.next()) {
