@@ -3,6 +3,7 @@ package com.astontech.dao.mysql;
 import com.astontech.bo.VehicleModel;
 import com.astontech.dao.VehicleMakeDAO;
 import com.astontech.dao.VehicleModelDAO;
+import common.helpers.DateHelper;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -57,17 +58,17 @@ public class VehicleModelDAOImplementation extends MySQL implements VehicleModel
 
     @Override
     public int insertVehicleModel(VehicleModel vehicleModel) {
-        return 0;
+        return ExecVehicleModel(vehicleModel, INSERT);
     }
 
     @Override
     public boolean updateVehicleModel(VehicleModel vehicleModel) {
-        return false;
+        return ExecVehicleModel(vehicleModel, UPDATE) > 0;
     }
 
     @Override
     public boolean deleteVehicleModel(int vehicleModelId) {
-        return false;
+        return ExecVehicleModel(getVehicleModelById(vehicleModelId), DELETE) > 0;
     }
 
     private static VehicleModel HydrateVehicleModel(ResultSet rs) throws SQLException {
@@ -79,5 +80,31 @@ public class VehicleModelDAOImplementation extends MySQL implements VehicleModel
         vehicleModel.setVehicleMake(vehicleMake.getVehicleMakeById(rs.getInt(3)));
 
         return vehicleModel;
+    }
+
+    private static int ExecVehicleModel(VehicleModel vehicleModel, int operation) {
+        System.out.println(vehicleModel.getVehicleModelId() + " " + operation);
+        Connect();
+        int id = 0;
+
+        try {
+            String sp = "{call ExecVehicleModel(?,?,?,?)}";
+
+            CallableStatement cStmt = connection.prepareCall(sp);
+            cStmt.setInt(1,operation);
+            cStmt.setInt(2,vehicleModel.getVehicleModelId());
+            cStmt.setString(3, vehicleModel.getVehicleModelName());
+            cStmt.setInt(4, vehicleModel.getVehicleMake().getVehicleMakeId());
+
+            ResultSet rs = cStmt.executeQuery();
+            if(rs.next()) {
+                id = rs.getInt(1);
+                return id;
+            }
+
+        } catch (SQLException sqlEx) {
+            logger.error(sqlEx);
+        }
+        return id;
     }
 }

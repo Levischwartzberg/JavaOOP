@@ -43,9 +43,10 @@ public class Main {
 //        LessonPersonInsert();
 //        LessonPersonUpdate();
 //        LessonPersonDelete();
-        VehicleMakeExecTest();
+//        VehicleMakeExecTest();
 //        VehicleMakeUpdateTest();
 //        VehicleMakeDeleteTest();
+        VehicleModelExecTests();
     }
 
     private static void Welcome() {
@@ -483,5 +484,35 @@ public class Main {
         VehicleMake vehicleMake = vehicleMakeDAO.getVehicleMakeById(11);
 
         vehicleMakeDAO.deleteVehicleMake(vehicleMake.getVehicleMakeId());
+    }
+
+    private static void VehicleModelExecTests() {
+        //region INSERT VEHICLE MODEL
+//        VehicleMakeDAO vehicleMakeDAO = new VehicleMakeDAOImplementation();
+//        VehicleMake vehicleMake = vehicleMakeDAO.getVehicleMakeById(12);
+//
+//        VehicleModel vehicleModel = new VehicleModel();
+//        vehicleModel.setVehicleModelName("Dookie");
+//        vehicleModel.setVehicleMake(vehicleMake);
+//
+//        VehicleModelDAO vehicleModelDAO = new VehicleModelDAOImplementation();
+//        int id = vehicleModelDAO.insertVehicleModel(vehicleModel);
+//        logger.info("New Vehicle Model Record Inserted. ID = " + id);
+        //endregion
+
+        //region UPDATE VEHICLE MODEL
+//        VehicleModelDAO vehicleModelDAO = new VehicleModelDAOImplementation();
+//        VehicleModel vehicleModel = vehicleModelDAO.getVehicleModelById(25);
+//
+//        vehicleModel.setVehicleModelName("Volt");
+//        vehicleModelDAO.updateVehicleModel(vehicleModel);
+        //endregion
+
+        //region DELETE VEHICLE MODEL
+//        VehicleModelDAO vehicleModelDAO = new VehicleModelDAOImplementation();
+//        VehicleModel vehicleModel = vehicleModelDAO.getVehicleModelById(26);
+//
+//        vehicleModelDAO.deleteVehicleModel(vehicleModel.getVehicleModelId());
+        //endregion
     }
 }
