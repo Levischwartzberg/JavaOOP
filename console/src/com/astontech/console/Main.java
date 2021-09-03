@@ -47,7 +47,7 @@ public class Main {
 //        VehicleMakeUpdateTest();
 //        VehicleMakeDeleteTest();
 //        VehicleModelExecTests();
-        VehicleExecTests();
+//        VehicleExecTests();
 //        PhoneExecTests();
     }
 
@@ -539,11 +539,11 @@ public class Main {
         //endregion
 
         //region UPDATE VEHICLE MODEL
-        VehicleDAO vehicleDAO = new VehicleDAOImplementation();
-        Vehicle vehicle = vehicleDAO.getVehicleById(24);
-
-        vehicle.setVIN("ayyye58b839f8h0");
-        vehicleDAO.updateVehicle(vehicle);
+//        VehicleDAO vehicleDAO = new VehicleDAOImplementation();
+//        Vehicle vehicle = vehicleDAO.getVehicleById(24);
+//
+//        vehicle.setVIN("ayyye58b839f8h0");
+//        vehicleDAO.updateVehicle(vehicle);
         //endregion
 
         //region DELETE VEHICLE MODEL
